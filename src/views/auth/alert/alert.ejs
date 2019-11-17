@@ -1,0 +1,17 @@
+<!--Thông báo mà ứng dụng muốn gửi về cho người dùng khi đăng ký cũng như đăng nhập; được sử dụng trong
+    views/auth/master.ejs -->
+<% if(errors != "") { %>
+  <% errors.forEach((item) => { %>
+    <!--Nếu có lỗi thì đưa về thông báo cho người dùng và mở model đăng ký-->
+    <script>openLoginModal();</script>
+    <div class="alert alert-danger"><%- item %></div>
+  <% }); %>
+<% } %>
+
+<% if(success != "") { %>
+  <% success.forEach((item) => { %>
+    <!--Nếu ko có lỗi thì đưa về thông báo cho người dùng đã thành công và mở model đăng nhập-->
+    <script>openLoginModal();</script>
+    <div class="alert alert-success"><%- item %></div>
+  <% }); %>
+<% } %>

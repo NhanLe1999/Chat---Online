@@ -1,0 +1,6 @@
+<!--thông báo về cho người dùng khi đăng nhập thành công; được khai báo views/main/master.ejs -->
+<% if(success != "") { %>
+  <% success.forEach((item) => { %>
+    <div class="master-success-message alert alert-success"><%- item %></div>
+  <% }); %>
+<% } %>

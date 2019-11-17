@@ -1,0 +1,116 @@
+<!-- Khi làm việc với nodejs và ejs thì file html phải lưu dưới dạng .ejs-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Online</title>
+    <link rel="shortcut icon" href="images/logo_favicon/nhan112.png" />
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/AlertifyJS/build/css/alertify.css">
+    
+    <link href="css/auth.css" rel="stylesheet" />
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/AlertifyJS/build/alertify.js"></script>
+
+    <script src="js/authConfig.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 my-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="login-title text-center">Welcome To Chat Online</h1>
+                    <hr>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6 table-responsive">
+                        <table class="table my-table">
+                            <tbody>
+                                <tr>
+                                    <td><h4>Group</h4></td>
+                                    <td><h4>Ba Con Heo</h4><td>
+                                </tr>
+                                <tr>
+                                    <td><h4>University</h4></td>
+                                    <td>
+                                        <a href="https://uet.vnu.edu.vn/" target="_blank">
+                                        <h4>UET</h4>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><h4>Số Điện Thoại</h4></td>
+                                    <td>
+                                    <h4>0123456789</h4>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-7 text-center">
+                    <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Đăng nhập</a>
+                    <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Đăng ký</a>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-description">
+                    <span>
+                        " Thời gian của bạn là hữu hạn đừng phí hoài nó bằng cách sống cuộc đời của một người khác "
+                    </span>
+                    <br>
+                    <span>
+                        " Your time is limited, so don't waste it by living someone else's life "
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="modal fade login" id="loginModal">
+            <div class="modal-dialog login animated">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Đăng nhập</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--thông báo mà ứng dụng muốn hiển thi cho người dùng khi đăng nhập hoặc đăng ký,
+                            được viết trong views/auth/alert/alert.ejs-->
+                        <%- include('alert/alert'); %>
+
+                        <!-- phần đăng nhập của ứng dụng; được viết trong views/login/login.ejs-->
+                        <%- include('login/login'); %>
+                        
+                        <!--Phần đăng ký của ứng dụng; được viế trong views/register/register.ejs-->
+                        <%- include('register/register'); %>
+                                             
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Bạn chưa có tài khoản?
+                            <a href="javascript: showRegisterForm();">Tạo một tài khoản mới</a>
+                            </span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                            <span>Bạn đã có tài khoản?</span>
+                            <a href="javascript: showLoginForm();">Đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

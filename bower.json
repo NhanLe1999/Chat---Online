@@ -1,0 +1,21 @@
+{
+  "name": "Chat-Online",
+  "authors": [
+    "LeVanNhan <LeVanNhan16101999@gmail.com>"
+  ],
+  "description": "Manage frontend libraries.",
+  "main": "src/server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src/public/"
+  ],
+  "dependencies": {
+    "emojione": "4.5.0"
+  }
+}
