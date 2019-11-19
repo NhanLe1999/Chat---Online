@@ -53,25 +53,32 @@ UserSchema.statics = {
       {"local.isActive": true, "local.verifyToken": null}
     ).exec();
   },
+  //Tìm kiếm id để update mật khẩu
   findUserByIdToUpdatePassword(id) {
     return this.findById(id).exec();
   },
+  //Tìm kiếm id cho việc tạo phiên đăng nhập bằng tài khoản local
   findUserByIdForSessionToUse(id) {
     return this.findById(id, {"local.password": 0}).exec();
   },
+  //tìm kiếm id cho việc tạo phiên đăng nhập băng tài khoản facebbook
   findByFacebookUseId(uid) {
     return this.findOne({"facebook.uid": uid}).exec();
   },
+  //Tìm kiếm id cho việc tạo phiên đăng nhập bằng tài khoản google
   findByGoogleUseId(uid) {
     return this.findOne({"google.uid": uid}).exec();
   },
+  //thay đổi thông tin của người udungf
   updateUser(id, item) {
     return this.findByIdAndUpdate(id, item).exec();
   },
+  //thay đổi mật khẩu của người dùng
   updatePassword(id, hashedPassword) {
     return this.findByIdAndUpdate(id, {"local.password": hashedPassword}).exec();
   },
 
+  //Tìm kiếm người dùng đê kết bạn
   findAllForAddContact(deprecatedUserIds, keyword) {
     return this.find({
       $and: [
@@ -86,9 +93,11 @@ UserSchema.statics = {
       ]
     }, {_id: 1, username: 1, address: 1, avatar: 1}).exec();
   },
+  //Lấy thông tin của người dùng
   getNormalUserDataById(id) {
     return this.findById(id, {_id: 1, username: 1, address: 1, avatar: 1}).exec();
   },
+  //tìm kiếm bạn bè để tạo nhóm chat
   findAllToAddGroupChat(friendIds, keyword) {
     return this.find({
       $and: [
@@ -103,6 +112,7 @@ UserSchema.statics = {
       ]
     }, {_id: 1, username: 1, address: 1, avatar: 1}).exec();
   },
+  //tìm kiếm cuộc trò chuyện cá nhân
   findAllConversations(allConversationIds, keyword) {
     return this.find({
       $and: [
@@ -111,6 +121,7 @@ UserSchema.statics = {
       ]
     }, {_id: 1, username: 1, avatar: 1}).exec();
   },
+  //tìm kiếm tất cả người dùng
   findAllUsers(getIdMembersInGroup) {
     return this.find({
       $and: [

@@ -40,6 +40,7 @@ ContactSchema.statics = {
       ]
     }).exec();
   },
+  //xóa bạn bè
   removeContact(userId, contactId) {
     return this.remove({
       $or: [
@@ -67,6 +68,7 @@ ContactSchema.statics = {
       ]
     }).exec();
   },
+  //hủy yêu cầu kết bạn đã nhận được
   removeRequestContactReceived(userId, contactId) {
     return this.remove({
       $and: [
@@ -77,6 +79,7 @@ ContactSchema.statics = {
     }).exec();
   },
 
+  //Chấp nhận lời yêu cầu kết bạn
   approveRequestContactReceived(userId, contactId) {
     return this.update({
       $and: [
@@ -90,6 +93,7 @@ ContactSchema.statics = {
     }).exec();
   },
 
+  //Lưu thông tin và trạng thái bạn bè
   getContacts(userId, limit) {
     return this.find({
       $and: [
@@ -101,6 +105,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "updateAt": -1 }).limit(limit).exec();
   },
+  //Lưu trạng thái bạn bè sau khi gửi lời yêu cầu kết bạn
   getContactsSent(userId, limit) {
     return this.find({
       $and: [
@@ -109,6 +114,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "createAt": -1 }).limit(limit).exec();
   },
+  //Lưu trạng thái bạn bè bên người  nhận được lời yêu cầu kết bạn
   getContactsReceived(userId, limit) {
     return this.find({
       $and: [
@@ -117,6 +123,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "createAt": -1 }).limit(limit).exec();
   },
+  //Đếm tất cả bạn bè
   countAllContacts(userId) {
     return this.count({
       $and: [
@@ -128,6 +135,7 @@ ContactSchema.statics = {
       ]
     }).exec();
   },
+  //Đếm những lời yêu cầu kết bạn đã gửi
   countAllContactsSent(userId) {
     return this.count({
       $and: [
@@ -136,6 +144,7 @@ ContactSchema.statics = {
       ]
     }).exec();
   },
+  //đếm nhưnng loi yêu cầu kết bạn đã nhân
   countAllContactsReceived(userId) {
     return this.count({
       $and: [
@@ -144,6 +153,7 @@ ContactSchema.statics = {
       ]
     }).exec();
   },
+  //Đếm số tin nhắn 
   readMoreContacts(userId, skip, limit) {
     return this.find({
       $and: [
@@ -155,6 +165,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "updateAt": -1 }).skip(skip).limit(limit).exec();
   },
+  //Đếm số tin nhán đã gửi
   readMoreContactsSent(userId, skip, limit) {
     return this.find({
       $and: [
@@ -163,6 +174,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "createAt": -1 }).skip(skip).limit(limit).exec();
   },
+  //đếm số tin nhắn đã nhận
   readMoreContactsReceived(userId, skip, limit) {
     return this.find({
       $and: [
@@ -171,6 +183,7 @@ ContactSchema.statics = {
       ]
     }).sort({ "createAt": -1 }).skip(skip).limit(limit).exec();
   },
+  //thay đổi thông tin khi có tin nhắn mới
   updateWhenHasNewMassage(userId, contactId) {
     return this.update({
       $or: [

@@ -8,7 +8,8 @@ let register = [
   //Kiểm tra giới tính
   check("gender", transValidation.gender_incorrect).isIn(["male", "female"]),
   //Kiểm tra pass word
-  check("password", transValidation.password_incorrect).isLength({ min: 8 })
+  check("password", transValidation.password_incorrect)
+    .isLength({ min: 8 })
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/),
     //Kiểm tra password == password_confirmation, nếu sai trả về giá trị false
   check("password_confirmation", transValidation.password_confirmation_incorrect).custom((value, {req}) => {

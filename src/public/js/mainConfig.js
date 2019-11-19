@@ -211,7 +211,7 @@ function userTalk() {
     let dataChat = $(this).data('uid');
     $('ul.people').find(`a[href = "#uid_${dataChat}"]`).click();
     $(this).closest('div.modal').modal('hide');
-    //console.log('chung');
+    //console.log('nhan');
   });
 }
 function imageZoom () {
