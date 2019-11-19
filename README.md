@@ -23,7 +23,7 @@
   - Bước 4: Xóa bỏ comment code từ dòng 78 đến dòng 115.
   - Bước s: Mở  TERMINAL của visual code chạy các lệnh: source sh/env.sh và lệnh npm start
   - Bước 6: Cuối cùng ra trình duyệt chạy: https://localhost:8011 để khám phá application bằng tài khoản            facebok và google.
-  Giải thích: Vì để vào đc facebook và google thì cần dùng cấu hình https:// nên cần phải cấu hình khác.
+  Giải thích: Vì để vào đc facebook và google thì cần dùng cấu hình https:// nên cần phải cấu hình https cho ứng dụng.
 
 + Nếu trong quá trình chạy application mà có vấn để gì liên hệ theo số điện thoại: 0968038752
     hoặc facebook: https://www.facebook.com/henry.le.54390876 của nhóm để được giải quyết nhé!
