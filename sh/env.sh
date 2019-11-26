@@ -16,7 +16,7 @@ export SESSION_SECRET="mySecret"
 #config admin email account Câu hình biến môi trường của email gửi tin nhắn sau khi đã
 #đăng ký tài khoản thành công
 export MAIL_USER=Leminhquanyka@gmail.com
-export MAIL_PASSWORD=16101999yka
+export MAIL_PASSWORD=01102017yka
 export MAIL_HOST=smtp.gmail.com
 export MAIL_PORT=587
 

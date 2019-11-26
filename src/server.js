@@ -16,6 +16,7 @@ import cookieParser from "cookie-parser";
 import events from "events";
 import * as configApp from "./config/app";
 
+
 //Init app Khởi tạo app
 let app = express();
 events.EventEmitter.defaultMaxListeners = configApp.app.max_event_listeners;
@@ -75,8 +76,8 @@ server.listen(process.env.APP_PORT , process.env.APP_HOST, () => {
   console.log(`Hello Nhan Le, I"m running at ${process.env.APP_HOST}:${process.env.APP_PORT}/`); 
 });
 
-/*
-//Cấu hình giao thức https
+
+/*//Cấu hình giao thức https
 import pem from "pem";
  import https from "https";
  pem.createCertificate({ days: 1, selfSigned: true }, function (err, keys) {
@@ -112,4 +113,5 @@ import pem from "pem";
      https.createServer({ key: keys.serviceKey, cert: keys.certificate }, app).listen(process.env.APP_PORT , process.env.APP_HOST, () => { 
          console.log(`Hello Nhan Le, I"m running at https://${process.env.APP_HOST}:${process.env.APP_PORT}/`); 
      }); 
-    })*/
+    })
+*/
