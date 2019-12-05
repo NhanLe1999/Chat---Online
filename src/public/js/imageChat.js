@@ -41,9 +41,13 @@ function imageChat(divId) {
       $.ajax({
         type: "post",
         url: "/message/add-new-image",
+        //Thiết lập giá trị false để buộc browser không lưu cache các trang được request.
         cache: false,
+        //Kiểu nội dung của dữ liệu được gửi lên server.
         contentType: false,
+        //Set giá trị này là false nếu bạn không muốn dữ liệu được truyền vào thiết lập data sẽ được xử lý và biến thành một query kiểu chuỗi.
         processData: false,
+        // Dữ liệu được gửi lên server khi thực thi một request Ajax.
         data: messageFormData,
         success: function (data) {
           let dataToEmit = {

@@ -23,7 +23,7 @@ let userOnlineOffline = (io) => {
     socket.on('check-status', () => {
       //buoc 1: gui ve cho nguoi dung
       socket.emit('server-send-list-users-online', Object.keys(clients));
-      //buoc 2
+      //buoc 2; Khi người dùng vừz đzzng nhap
       socket.broadcast.emit('server-send-when-new-user-online', socket.request.user._id);
     });
 

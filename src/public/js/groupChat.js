@@ -81,7 +81,7 @@ function callCreateGroupChat() {
       title: `Bạn có chắc chắn muốn tạo nhóm &nbsp; ${groupChatName}?`,
       type: "info",
       showCancelButton: true,
-      confirmButtonColor: "##2ECC17",
+      confirmButtonColor: "#2ECC71",
       cancelButtonColor: "#FF7675",
       confirmButtonText: "Xác nhận",
       cancelButtonText: "Hủy"
